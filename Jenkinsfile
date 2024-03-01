@@ -22,21 +22,14 @@ pipeline {
         success {
             // Actions to take on success
             emailext(
-                subject: "Build Successful: ${currentBuild.fullDisplayName}",
-                body: "The build ${currentBuild.fullDisplayName} was successful.",
-                to: "aryanhungry8@gmail.com",
-                replyTo: "jenkins@example.com",
-                mimeType: 'text/html'
+                mail bcc: '', body: 'The build ${currentBuild.fullDisplayName} was successful.', cc: '', from: '', replyTo: '', subject: '', to: 'aryanhungry8@gmail.com'
+                
+                
             )
         }
         failure {
-            // Actions to take on failure
-            emailext(
-                subject: "Build Failed: ${currentBuild.fullDisplayName}",
-                body: "The build ${currentBuild.fullDisplayName} failed. Please investigate.",
-                to: "aryanhungry8@gmail.com",
-                replyTo: "jenkins@example.com",
-                mimeType: 'text/html'
+                mail bcc: '', body: 'oooh yeah', cc: '', from: '', replyTo: '', subject: '', to: 'aryanhungry8@gmail.com'
+
             )
         }
     }
