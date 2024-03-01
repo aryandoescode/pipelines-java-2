@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                // Add your build commands, e.g., for Maven:
+                // Add your build commands, e.g., for Maven
                 sh 'mvn clean install'
             }
         }
