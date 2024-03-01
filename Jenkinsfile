@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Preparation') {
             steps {
-                git 'https://github.com/aryandoescode/pipelines-java-2.git'
+                git scm
                 
             }
         }
