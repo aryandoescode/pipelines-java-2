@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Preparation') {
-            steps {
-                git 'https://github.com/aryandoescode/pipelines-java-2.git'
-                
-            }
-        }
 
         stage('Build') {
             steps {
