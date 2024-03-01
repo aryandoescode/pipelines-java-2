@@ -14,23 +14,17 @@ pipeline {
             steps {
                 // Add your test commands, e.g., for Maven:
                 sh 'mvn test'
+                mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: '', to: 'aryanhungry8@gmail.com'
+            }
+        }
+        stage('Mail') {
+            steps {
+                // Add your test commands, e.g., for Maven:
+                mail bcc: '', body: 'Hello', cc: '', from: '', replyTo: '', subject: '', to: 'aryanhungry8@gmail.com'
             }
         }
     }
 
-    post {
-        success {
-            // Actions to take on success
-            emailext(
-                mail bcc: '', body: 'The build ${currentBuild.fullDisplayName} was successful.', cc: '', from: '', replyTo: '', subject: '', to: 'aryanhungry8@gmail.com'
-                
-                
-            )
-        }
-        failure {
-                mail bcc: '', body: 'oooh yeah', cc: '', from: '', replyTo: '', subject: '', to: 'aryanhungry8@gmail.com'
-
-            )
-        }
+    
     }
-}
+
