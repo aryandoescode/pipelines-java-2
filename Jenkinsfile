@@ -25,9 +25,6 @@ pipeline {
     }
 
     post {
-        always {
-            // Cleanup or additional steps to run always
-        }
         success {
             // Actions to take on success
             emailext(
